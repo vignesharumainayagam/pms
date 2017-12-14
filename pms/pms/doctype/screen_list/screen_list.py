@@ -7,4 +7,5 @@ import frappe
 from frappe.model.document import Document
 
 class ScreenList(Document):
-	pass
+	def on_update(self):
+		pass

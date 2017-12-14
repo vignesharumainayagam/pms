@@ -12,12 +12,11 @@ def get_data():
 				},				
 				{
 					"type": "doctype",
-					"name": "Module List",
-					"label": "Module"
+					"name": "Module"
 				},
 				{
 					"type": "doctype",
-					"name": "Screen List"
+					"name": "Screen"
 				}
 			]
 		},
@@ -26,7 +25,8 @@ def get_data():
 			"items": [
 				{
 					"type": "doctype",
-					"name": "Bug Sheets"
+					"name": "Bug Sheet",
+					"label": "Bug Sheets"
 				},			
 		 	# 	{
 				# 	"type": "page",

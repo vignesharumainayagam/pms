@@ -18,16 +18,20 @@ frappe.ui.form.on('Module List', {
 //             module: frm.doc.name
 //                     },
 // callback: function (r) {
-// console.log(r)
-// for(var i=0; i<r.message.length; i++){
-// frappe.model.add_child(cur_frm.doc, "Module Screen Child", "table_9");  	
-// $.each(frm.doc.table_9 || [], function(e, v) {
-// frappe.model.set_value(v.doctype, v.name, "screen_name", r.message[i][0])
-// })
-//  frm.refresh_field("table_9");
-// }
-// }
-// })
+// 			data = r.message;
+// 			for (var k=0; k < data.length; k++){
+// 			frappe.model.add_child(cur_frm.doc, "Module Screen Child", "table_9"); 
+// 			$.each(frm.doc.table_9 || [], function(e, v){
+// 			frappe.model.set_value(v.doctype, v.name, "screen_name", data[k][0])
+// 			})
+
+// 			}
+
+
+// 		}
+
+// 	})
+
 // });
 
 
@@ -46,3 +50,10 @@ frappe.ui.form.on('Module List', {
 // })
 // });
 
+// for(var i=0; i<r.message.length; i++){
+// frappe.model.add_child(cur_frm.doc, "Module Screen Child", "table_9");  	
+// $.each(frm.doc.table_9 || [], function(e, v) {
+// frappe.model.set_value(v.doctype, v.name, "screen_name", r.message[i][0])
+// })
+//  frm.refresh_field("table_9");
+// }

@@ -6,3 +6,12 @@ frappe.ui.form.on('Bug Sheet', {
 
 	}
 });
+
+// frappe.ui.from.on("Bug Sheet", "onload", function(frm){
+// alert("Hi")
+// });
+
+// frappe.ui.form.on("Bug Sheet", "onload", function(frm){
+// $( ".col-md-2" ).remove();
+
+// });

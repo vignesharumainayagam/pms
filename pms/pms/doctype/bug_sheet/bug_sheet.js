@@ -13,5 +13,14 @@ frappe.ui.form.on('Bug Sheet', {
 
 // frappe.ui.form.on("Bug Sheet", "onload", function(frm){
 // $( ".col-md-2" ).remove();
-
 // });
+
+frappe.ui.form.on("Bug Sheet", "validate", function(frm){
+var data = frappe.datetime.now_date();
+if (frm.doc.status == "Fixed") {
+cur_frm.set_value("fixed_on", data);
+}
+else if (frm.doc.status == "Verified") {
+cur_frm.set_value("verified_on", data);	
+}
+});

@@ -34,10 +34,10 @@ def get_data():
 				# 	"label": _("PMS"),
 				# 	"description": _("PMS")
 				# },
-		# 		{
-		# 			"type": "doctype",
-		# 			"name": "Screen List"
-		# 		}
+				{
+					"type": "doctype",
+					"name": "Test Case"
+				}
 			]
 		},
 		{

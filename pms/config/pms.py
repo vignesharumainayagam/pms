@@ -28,6 +28,10 @@ def get_data():
 					"name": "Bug Sheet",
 					"label": "Bug Sheets"
 				},			
+				{
+					"type": "doctype",
+					"name": "Test Case"
+				},
 		 	# 	{
 				# 	"type": "page",
 				# 	"name": "pms",

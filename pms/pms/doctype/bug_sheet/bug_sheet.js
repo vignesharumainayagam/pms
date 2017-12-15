@@ -13,6 +13,8 @@ frappe.ui.form.on('Bug Sheet', {
 
 // frappe.ui.form.on("Bug Sheet", "onload", function(frm){
 // $( ".col-md-2" ).remove();
+// console.log(window.location.origin+"/api/resource/DocShare")
+
 // });
 
 frappe.ui.form.on("Bug Sheet", "validate", function(frm){
@@ -24,3 +26,64 @@ else if (frm.doc.status == "Verified") {
 cur_frm.set_value("verified_on", data);	
 }
 });
+
+
+frappe.ui.form.on("Bug Sheet", "assign", function(frm){
+var arr = frm.doc.table_11;
+for(var i=0; i<arr.length; i++){
+  $.ajax({
+  url : window.location.origin+"/api/resource/DocShare",
+  dataType: 'text',
+  type: 'POST',
+  contentType: 'application/json',
+  data : JSON.stringify( {
+  "user" : arr[i].assign_to,
+  "share_doctype" : frm.doc.doctype,
+  "share_name" : frm.doc.name,
+  "read" : 1,
+  "write" : 1,
+  "share" : 1
+  }
+  ),
+  beforeSend: function(xhr){
+  xhr.setRequestHeader(
+  'X-Frappe-CSRF-Token', frappe.csrf_token
+  );
+  },success: function(data){
+  console.log(data);
+  }, error: function(error){
+  console.log(error);
+  }
+  });
+}
+});
+
+
+
+// frappe.ui.form.on("Bug Sheet", "validate", function(frm) {
+//   $.ajax({
+//   url : window.location.origin+"/api/resource/DocShare",
+//   dataType: 'text',
+//   type: 'POST',
+//   contentType: 'application/json',
+//   data : JSON.stringify( {
+//   "user" : arr[i].assign_to,
+//   "share_doctype" : frm.doc.doctype,
+//   "share_name" : frm.doc.name,
+//   "read" : 1,
+//   "write" : 1,
+//   "share" : 1
+//   }
+//   ),
+//   beforeSend: function(xhr){
+//   xhr.setRequestHeader(
+//   'X-Frappe-CSRF-Token', frappe.csrf_token
+//   );
+//   },success: function(data){
+//   console.log(data);
+//   frappe.msgprint(__("Saved In EB Meter Reading"));  
+//   }, error: function(error){
+//   console.log(error);
+//   }
+//   });
+// });

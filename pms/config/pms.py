@@ -34,10 +34,6 @@ def get_data():
 				# 	"label": _("PMS"),
 				# 	"description": _("PMS")
 				# },
-				{
-					"type": "doctype",
-					"name": "Test Case"
-				}
 			]
 		},
 		{

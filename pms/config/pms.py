@@ -28,12 +28,12 @@ def get_data():
 					"name": "Bug Sheet",
 					"label": "Bug Sheets"
 				},			
-		 	# 	{
-				# 	"type": "page",
-				# 	"name": "pms",
-				# 	"label": _("PMS"),
-				# 	"description": _("PMS")
-				# },
+		 		{
+					"type": "page",
+					"name": "pms",
+					"label": _("PMS"),
+					"description": _("PMS")
+				},
 		# 		{
 		# 			"type": "doctype",
 		# 			"name": "Screen List"

@@ -17,6 +17,8 @@ frappe.pages['pms'].on_page_load = function(wrapper) {
 	});	
 
 	page.wrapper.html(frappe.render_template('abc'));
+	$(document).ready(function(){
+		// alert("Works")
+	});
 
-	console.log(page)
 }

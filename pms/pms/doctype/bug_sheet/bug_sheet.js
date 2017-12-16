@@ -2,20 +2,10 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on('Bug Sheet', {
-	refresh: function(frm) {
-
+	onload: function(frm) {
+    console.log(frm)
 	}
 });
-
-// frappe.ui.from.on("Bug Sheet", "onload", function(frm){
-// alert("Hi")
-// });
-
-// frappe.ui.form.on("Bug Sheet", "onload", function(frm){
-// $( ".col-md-2" ).remove();
-// console.log(window.location.origin+"/api/resource/DocShare")
-
-// });
 
 frappe.ui.form.on("Bug Sheet", "validate", function(frm){
 var data = frappe.datetime.now_date();
@@ -60,30 +50,3 @@ for(var i=0; i<arr.length; i++){
 
 
 
-// frappe.ui.form.on("Bug Sheet", "validate", function(frm) {
-//   $.ajax({
-//   url : window.location.origin+"/api/resource/DocShare",
-//   dataType: 'text',
-//   type: 'POST',
-//   contentType: 'application/json',
-//   data : JSON.stringify( {
-//   "user" : arr[i].assign_to,
-//   "share_doctype" : frm.doc.doctype,
-//   "share_name" : frm.doc.name,
-//   "read" : 1,
-//   "write" : 1,
-//   "share" : 1
-//   }
-//   ),
-//   beforeSend: function(xhr){
-//   xhr.setRequestHeader(
-//   'X-Frappe-CSRF-Token', frappe.csrf_token
-//   );
-//   },success: function(data){
-//   console.log(data);
-//   frappe.msgprint(__("Saved In EB Meter Reading"));  
-//   }, error: function(error){
-//   console.log(error);
-//   }
-//   });
-// });
